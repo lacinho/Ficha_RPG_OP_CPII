@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Criação de ficha</title>
+    <link rel="icon" type="image/x-icon" href="icon_rTYGdbJeYu6Ori3F.png">
+    <style>
+        html {
+            background-image: url(b02abffd9e15736d8169bd9ff1971c82.jpg);
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: 100% 100%;
+            font-size: large;
+        }
+        body {
+            backdrop-filter: blur(2px);
+            color: whitesmoke;
+            font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        }
+        #historia {
+            text-align: left;
+            margin: auto;
+            width: 893px;
+            height: 1000px;
+            margin-right: auto;
+            margin-left: auto;  
+        }
+        #classe {
+            text-align: left;
+            margin: auto;
+            width: 1000px;
+            height: 1000px;
+            margin-right: auto;
+            margin-left: auto;
+        }
+        input {
+            background-color: rgba(0, 0, 0, 0.750);
+            box-shadow: 0px 0px 30px rgba(227, 228, 237, 0.37);
+            border: 2px solid rgba(255, 255, 255, 0.18);
+            color: gray;
+            width: 200px;
+            height: 25px;
+            border-radius: 5px;
+        }
+        textarea {
+            font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            width: 99.35%;
+            background-color: rgba(0, 0, 0, 0.750);
+            box-shadow: 0px 0px 30px rgba(227, 228, 237, 0.37);
+            border: 2px solid rgba(255, 255, 255, 0.18);
+            color: gray;
+            resize: vertical;
+            border-radius: 5px;
+        }
+        ::placeholder {
+            font-size: large;
+        }
+        #ph1{
+            height: 100px;
+            display: flex;
+        }
+        #ph1 > div {
+            width: 25%; 
+        }
+        #opcoes {
+            display: flex;
+        }
+        #opcoes > div {
+            width: 32%;
+        }
+        #opcoes > p {
+            width: 2%;
+        }
+        #imgs_c1 {
+            display: flex;
+        }
+        #imgs_c1 > a{
+            width: 49%;
+        }
+        #imgs_c1 > p{
+            width: 2%;
+        }
+        #imgs_c2 {
+            display: flex;
+        }
+        #imgs_c2 > a{
+            width: 49%;
+        }
+        #imgs_c2 > p{
+            width: 2%;
+        }
+        #imgs_e1 {
+            display: flex;
+        }
+        #imgs_e1 > a{
+            width: 49%;
+        }
+        #imgs_e1 > p{
+            width: 2%;
+        }
+        #imgs_e2 {
+            display: flex;
+        }
+        #imgs_e2 > a{
+            width: 49%;
+        }
+        #imgs_e2 > p{
+            width: 2%;
+        }
+        #imgs_o1 {
+            display: flex;
+        }
+        #imgs_o1 > a{
+            width: 49%;
+        }
+        #imgs_o1 > p{
+            width: 2%;
+        }
+        #imgs_o2 {
+            display: flex;
+        }
+        #imgs_o2 > a{
+            width: 49%;
+        }
+        #imgs_o2 > p{
+            width: 2%;
+        }
+        .button {
+            background: rgba(0, 0, 0, 0.750);
+            color: whitesmoke;
+            display: flex;
+            width: 125px;
+            height: 40px;
+            transition: 0.3s;
+            text-align: center;
+            backdrop-filter: blur(30px);
+            box-shadow: 0px 0px 30px rgba(227, 228, 237, 0.37);
+            border: 2px solid rgba(255, 255, 255, 0.18);
+            border-radius: 3px;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 10px;
+        }
+        .button div:hover {
+            transform: scale(1.1);
+            transition: .3s;
+        }
+        #reset_button {
+            background: rgba(0, 0, 0, 0.750);
+            color: whitesmoke;
+            display: flex;
+            width: 140px;
+            height: 55px;
+            transition: 0.3s;
+            text-align: center;
+            box-shadow: 0px 0px 30px rgba(227, 228, 237, 0.37);
+            border: 2px solid rgba(255, 255, 255, 0.18);
+            border-radius: 3px;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 10px;
+        }
+        img {
+            max-width: 300px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: transform 0.3s;
+        }
+        img:hover {
+            transform: scale(1.05);
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+        }
+        .modal img {
+            max-width: 90%;
+            max-height: 90%;
+            cursor: grab;
+            transition: transform 0.2s ease;
+        }
+        .close {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            font-size: 30px;
+            color: white;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        #finalizar {
+            background: rgba(0, 0, 0, 0.750);
+            color: whitesmoke;
+            display: flex;
+            width: 175px;
+            height: 75px;
+            transition: 0.3s;
+            text-align: center;
+            backdrop-filter: blur(30px);
+            box-shadow: 0px 0px 30px rgba(227, 228, 237, 0.37);
+            border: 2px solid rgba(255, 255, 255, 0.18);
+            border-radius: 3px;
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: 75px;
+        }
+        #finalizar div:hover {
+            transform: scale(1.1);
+            transition: .3s;
+        }
+        #col-1 {
+            height: 1%;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div id="col-1">
+        <div id="historia">
+            <h2 style="text-align: center;">História</h2>
+            <div id="ph1">
+                <div>
+                    <h3>Jogador</h3>
+                    <input id="jogador" placeholder="Nome do jogador" type="text" oninput="app.grava('jogador')">
+                </div>
+                <div>
+                    <h3>Personagem</h3>
+                    <input id="personagem" placeholder="Nome do personagem" type="text" oninput="app.grava('personagem')">
+                </div>
+            </div>
+            <div id="ph2">
+                <h3>Aparência</h3>
+                <textarea placeholder="Como os outros vêm o personagem" rows="8" cols="20" id="aparencia" type="text" oninput="app.grava('aparencia')"></textarea>
+            </div>
+            <div id="ph3">
+                <h3>Personalidade</h3>
+                <textarea placeholder="Como o personagem pensa" rows="8" cols="20" id="personalidade" type="text" oninput="app.grava('personalidade')"></textarea>
+            </div>
+            <div id="ph4">
+                <h3>Histórico</h3>
+                <textarea placeholder="Todo o passado do personagem" rows="8" cols="20" id="historico" type="text" oninput="app.grava('historico')"></textarea>
+            </div>
+            <div id="ph5">
+                <h3>Objetivo</h3>
+                <textarea placeholder="Objetivo principal do personagem" rows="8" cols="20" id="objetivo" type="text" oninput="app.grava('objetivo')"></textarea>
+            </div>
+        </div>
+        <div id="classe">
+            <h2 style="text-align: center;">Classes</h2>
+            <div id="opcoes">
+                <div style="text-align: center;height: 700px;" id="combatente">
+                    <h3>Combatente</h3>
+                    <br>
+                    <div id="imgs_c1" style="height: 32%;">
+                        <a style="height: 100%;"><img class="imagens" src="combatente_1.jpg" style="width: 100%;height: 100%;"></a>
+                        <p></p>
+                        <a style="height: 100%;"><img class="imagens" src="combatente_2.jpg" style="width: 100%;height: 100%;"></a>
+                    </div>
+                    <br>
+                    <div id="imgs_c2" style="height: 32%;">
+                        <a style="height: 100%;"><img class="imagens" src="combatente_3.jpg" style="width: 100%;height: 100%;"></a>
+                        <p></p>
+                        <a style="height: 100%;"><img class="imagens" src="combatente_4.jpg" style="width: 100%;height: 100%;"></a>
+                    </div>
+                    <button class="button" onclick="escolhido(this)"><div style="width: 100%;height: 100%;"><h3 style="margin-top: 8px;">Escolher</h3></div></button>
+                </div>
+                <p></p>
+                <div style="text-align: center;" id="especialista">
+                    <h3>Especialista</h3>
+                    <br>
+                    <div id="imgs_e1" style="height: 32%;">
+                        <a style="height: 100%;"><img class="imagens" src="especialista_1.jpg" style="width: 100%;height: 100%;"></a>
+                        <p></p>
+                        <a style="height: 100%;"><img class="imagens" src="especialista_2.jpg" style="width: 100%;height: 100%;"></a>
+                    </div>
+                    <br>
+                    <div id="imgs_e2" style="height: 32%;">
+                        <a style="height: 100%;"><img class="imagens" src="especialista_3.jpg" style="width: 100%;height: 100%;"></a>
+                        <p></p>
+                        <a style="height: 100%;"><img class="imagens" src="especialista_4.jpg" style="width: 100%;height: 100%;"></a>
+                    </div>
+                    <button class="button" onclick="escolhido(this)"><div style="width: 100%;height: 100%;"><h3 style="margin-top: 8px;">Escolher</h3></div></button>
+                </div>
+                <p></p>
+                <div style="text-align: center;" id="ocultista">
+                    <h3>Ocultista</h3>
+                    <br>
+                    <div id="imgs_o1" style="height: 32%;">
+                        <a style="height: 100%;"><img class="imagens" src="ocultista_1.jpg" style="width: 100%;height: 100%;"></a>
+                        <p></p>
+                        <a style="height: 100%;"><img class="imagens" src="ocultista_2.jpg" style="width: 100%;height: 100%;"></a>
+                    </div>
+                    <br>
+                    <div id="imgs_o2" style="height: 32%;">
+                        <a style="height: 100%;"><img class="imagens" src="ocultista_3.jpg" style="width: 100%;height: 100%;"></a>
+                        <p></p>
+                        <a style="height: 100%;"><img class="imagens" src="ocultista_4.jpg" style="width: 100%;height: 100%;"></a>
+                    </div>
+                    <button class="button" onclick="escolhido(this)"><div style="width: 100%;height: 100%;"><h3 style="margin-top: 8px;">Escolher</h3></div></button>
+                </div>
+            </div>
+            <button id="reset_button" style="display: none; margin-top: 10px;" onclick="desfazerEscolha()"><div><h3 style="margin-top: 7px;">Desfazer Escolha</h3></div></button>
+        </div>
+        <button id="finalizar" onclick="validarFormulario()"><div style="width: 100%;height: 100%;"><h1>Finalizar</h1></div></button>
+    </div>
+    <div class="modal" id="modal">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <img id="modalImg" src="">
+    </div>
+    <script>
+        const modal = document.getElementById("modal");
+        const modalImg = document.getElementById("modalImg");
+        const images = document.querySelectorAll(".imagens");
+        let scale = 1; 
+        let isDragging = false;
+        let startX, startY, currentX = 0, currentY = 0;
+        images.forEach(img => {
+            img.addEventListener("click", function () {
+                modal.style.display = "flex";
+                modalImg.src = this.src;
+                scale = 1;
+                modalImg.style.transform = "scale(1) translate(0px, 0px)";
+            });
+        });
+        function closeModal() {
+            modal.style.display = "none";
+            modalImg.style.transform = "scale(1) translate(0px, 0px)";
+            scale = 1;
+        }
+        function escolhido(clickedButton) {
+            document.querySelectorAll(".button").forEach(btn => btn.style.display = "none");
+            const h3 = document.createElement("h3");
+            h3.textContent = "Escolhido";
+            h3.id = "chosenText";
+            clickedButton.parentElement.appendChild(h3);
+            document.getElementById("reset_button").style.display = "block";
+        }
+        function desfazerEscolha() {
+            document.querySelectorAll(".button").forEach(btn => btn.style.display = "flex");
+            const chosenText = document.getElementById("chosenText");
+            if (chosenText) {
+                chosenText.remove();
+            }
+            document.getElementById("reset_button").style.display = "none";
+        }
+        function validarFormulario() {
+            const campos = document.querySelectorAll("input, textarea");
+            let todosPreenchidos = true;
+            campos.forEach(campo => {
+                if (campo.value.trim() === "") {
+                    todosPreenchidos = false;
+                }
+            });
+            const escolhido = document.querySelector("#classe h3:nth-of-type(2)");
+            if (todosPreenchidos && escolhido) {
+                alert("Personagem criado com sucesso!");
+            } 
+            else {
+                alert("Preencha todos os campos e escolha uma classe antes de finalizar!");
+            }
+        }
+        modal.addEventListener("click", function (e) {
+            if (e.target === modal) {
+                closeModal();
+            }
+        });
+        modalImg.addEventListener("wheel", function (e) {
+            e.preventDefault();
+            scale += e.deltaY * -0.001;
+            scale = Math.min(Math.max(1, scale), 3);
+            modalImg.style.transform = `scale(${scale})`;
+        });
+        modalImg.addEventListener("mousedown", function (e) {
+            isDragging = true;
+            startX = e.clientX - currentX;
+            startY = e.clientY - currentY;
+            modalImg.style.cursor = "grabbing";
+        });
+        document.addEventListener("mousemove", function (e) {
+            if (!isDragging) return;
+            currentX = e.clientX - startX;
+            currentY = e.clientY - startY;
+            modalImg.style.transform = `scale(${scale}) translate(${currentX}px, ${currentY}px)`;
+        });
+        document.addEventListener("mouseup", function () {
+            isDragging = false;
+            modalImg.style.cursor = "grab";
+        });
+    </script>
+</body>
+</html>

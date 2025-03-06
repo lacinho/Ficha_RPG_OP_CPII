@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-BR ">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ficha RPG DS</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/x-icon" href="icon_rTYGdbJeYu6Ori3F.png">
+    <style>
+        html {
+            background-image: url(b02abffd9e15736d8169bd9ff1971c82.jpg);
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: 100% 100%;
+        }
+        body {
+            overflow: hidden;
+            background: #111;
+        }
+        a {
+            color: rgb(219, 221, 248);
+        }
+        * {
+            scroll-behavior: smooth;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        div {
+            text-align: center;
+            width: 25%;
+            height: 100px;
+            float:left;
+        }
+        h2{
+            margin-top: 9%;
+            height: 62px;
+            font-size: large;
+        }
+        .menu {
+            width: 100%;
+            font-size: 24px;
+            color: white;
+            opacity: 0;
+            transform: translateY(100px);
+            transition: opacity 1s ease-out, transform 1s ease-out;
+        }
+        #botoes {
+            display: inline-block;
+            width: 100%;
+            transition: 0.3s;
+            text-align: center;
+            backdrop-filter: blur(30px);
+            box-shadow: 0px 0px 30px rgba(227, 228, 237, 0.37);
+            border: 2px solid rgba(255, 255, 255, 0.18);
+            margin-top: 40%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        #botoes div:hover {
+            transform: scale(1.1);
+            transition: .3s;
+        }
+    </style>
+</head>
+<body id="theme" style="width: 100%;font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;overflow:hidden;">
+    <header>
+        <div class="menu">
+            <div id="botoes">
+                <a href="Ficha.html"><div><h2>Criar novo personagem</h2></div></a>
+                <a href="#personagen"><div><h2>Personagens criados</h2></div></a>
+                <a href="#excluir"><div><h2>Excluir personagem</h2></div></a>
+                <a href="Sobre nós - projeto 1.html"><div><h2>Sobre nós</h2></div></a>
+            </div>
+        </div>
+    </header>
+    <script>
+        window.onload = function() {
+            const menu = document.querySelector(".menu");
+            menu.style.opacity = "1";
+            menu.style.transform = "translateY(0)";
+        };
+    </script>
+</body>
+</html>
